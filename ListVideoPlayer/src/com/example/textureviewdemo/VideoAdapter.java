@@ -1,8 +1,10 @@
 package com.example.textureviewdemo;
 
 import java.util.List;
+
 import com.example.textureviewdemo.TextureVideoView.MediaState;
 import com.example.textureviewdemo.TextureVideoView.OnStateChangeListener;
+
 import android.content.Context;
 import android.graphics.SurfaceTexture;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHolder>{
 
@@ -46,6 +49,12 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
 		viewHolder.videoView.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				
+				if(mVideos.get(position).length()==0){
+					Toast.makeText(mContext, "视频地址不能为空，请在Activity中设置视频地址哦",Toast.LENGTH_LONG).show();
+					return;
+				}
+				
 				if(lastPlayVideo==null)
 				{
 					lastPlayVideo=viewHolder;
