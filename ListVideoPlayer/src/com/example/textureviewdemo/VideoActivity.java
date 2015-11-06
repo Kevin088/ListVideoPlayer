@@ -19,12 +19,18 @@ public class VideoActivity extends Activity {
 		LinearLayoutManager layoutManager=new LinearLayoutManager(VideoActivity.this);
 		layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 		rlVideoList.setLayoutManager(layoutManager);
-		videos.add("视频地址");
-		videos.add("视频地址");
-		videos.add("视频地址");
-		videos.add("视频地址");
-		videos.add("视频地址");
-		videos.add("视频地址");
+		
+		/**故意报错**/
+		=================/**请填充url地址**/======================;
+		=================/**请填充url地址**/======================;
+		=================/**请填充url地址**/======================;
+		/**故意报错**/
+		videos.add("");
+		videos.add("");
+		videos.add("");
+		videos.add("");
+		videos.add("");
+		videos.add("");
 		VideoAdapter adapter=new VideoAdapter(VideoActivity.this, videos);
 		rlVideoList.setAdapter(adapter);
 	}
