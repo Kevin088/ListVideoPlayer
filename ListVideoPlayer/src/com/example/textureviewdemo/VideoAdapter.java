@@ -93,6 +93,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
 				viewHolder.imvPlay.setVisibility(View.VISIBLE);
 				viewHolder.pbProgressBar.setMax(1);
 				viewHolder.pbProgressBar.setProgress(0);
+				viewHolder.imvPreview.setVisibility(View.VISIBLE);
 			}
 			
 			@Override
@@ -109,6 +110,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
 			
 			@Override
 			public void onSeek(int max,int progress){
+				viewHolder.imvPreview.setVisibility(View.GONE);
 				viewHolder.pbProgressBar.setMax(max);
 				viewHolder.pbProgressBar.setProgress(progress);
 			}
@@ -117,6 +119,33 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
 			public void onStop() {
 				viewHolder.pbProgressBar.setMax(1);
 				viewHolder.pbProgressBar.setProgress(0);
+				viewHolder.pbWaiting.setVisibility(View.GONE);
+				viewHolder.imvPlay.setVisibility(View.VISIBLE);
+				viewHolder.imvPreview.setVisibility(View.VISIBLE);
+			}
+
+			@Override
+			public void onPause() {
+				viewHolder.pbWaiting.setVisibility(View.GONE);
+				viewHolder.imvPlay.setVisibility(View.VISIBLE);
+			}
+
+			@Override
+			public void onTextureViewAvaliable() {
+				
+			}
+
+			@Override
+			public void playFinish() {
+				viewHolder.pbProgressBar.setMax(1);
+				viewHolder.pbProgressBar.setProgress(0);
+				viewHolder.imvPlay.setVisibility(View.GONE);
+				viewHolder.imvPreview.setVisibility(View.VISIBLE);
+			}
+
+			@Override
+			public void onPrepare() {
+				
 			}
 		});
 	}
