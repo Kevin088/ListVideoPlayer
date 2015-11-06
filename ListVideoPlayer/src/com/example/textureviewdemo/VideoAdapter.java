@@ -1,10 +1,8 @@
 package com.example.textureviewdemo;
 
 import java.util.List;
-
 import com.example.textureviewdemo.TextureVideoView.MediaState;
 import com.example.textureviewdemo.TextureVideoView.OnStateChangeListener;
-import com.xiaojiang.textureviewdemo.R;
 import android.content.Context;
 import android.graphics.SurfaceTexture;
 import android.support.v7.widget.RecyclerView;
