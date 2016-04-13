@@ -78,9 +78,7 @@ public class TextureVideoView extends TextureView implements
 				if(percent==100&&mediaState!=MediaState.PAUSE)
 				{
 					mediaState = MediaState.PLAYING;
-					if (onStateChangeListener != null) {
-						onStateChangeListener.onPlaying();
-					}
+					onStateChangeListener.onPlaying();
 				}
 				if (mediaState == MediaState.PLAYING) {
 					if(playFinished)
